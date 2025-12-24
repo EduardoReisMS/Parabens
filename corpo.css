@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
     background-color: pink;
     text-align: center;
@@ -22,6 +24,10 @@ body {
 /* Espaçamento */
 .surpresa {
     margin-top: 1.5rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Destaques */
