@@ -3,8 +3,6 @@ body {
     text-align: center;
     font-family: "Courier New", Courier, monospace;
     color: white;
-    margin: 0;
-    padding: 1rem;
 }
 
 /* Caixa principal */
@@ -12,13 +10,11 @@ body {
     background-color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 1rem;
     border-radius: 12px;
 
-    width: 100%;
-    max-width: 420px; /* largura ideal para celular */
+    width: 95%;
     margin: auto;
-
+    padding: 10px;
     color: black;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
