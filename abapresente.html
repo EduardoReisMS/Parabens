@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa 🎉</title>
+
+    <style>
+        body {
+            background-color: pink;
+            margin: 0;
+            padding: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 14px;
+            padding: 1.5rem;
+            max-width: 420px;
+            margin: auto;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        h1 {
+            color: rgb(179, 179, 94);
+        }
+
+        p {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin: 1rem 0;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Confetes */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 8px;
+            height: 8px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <p>Juntei as 3 coisas que você mais ama:</p>
+        <p>Seu best <br>Doces</br> Lembrancinha</p>
+
+        <p>Presente entregue após abraço na segunda</p>
+    </main>
+
+    <script>
+        // Gera confetes
+        const colors = ['#fff', '#ff4d6d', '#ffd166', '#6ec1e4', '#b983ff'];
+
+        for (let i = 0; i < 80; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+
+            document.body.appendChild(confetti);
+        }
+    </script>
+
+</body>
+</html>
