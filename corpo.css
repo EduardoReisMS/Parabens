@@ -42,4 +42,16 @@ img {
     max-width: 280px;
     height: auto;
     margin-top: 1rem;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:visited {
+  color: inherit;
 }
