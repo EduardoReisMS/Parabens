@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* Fontes de texto
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+WAL+Guides&family=Playwrite+CU+Guides&display=swap');
+
+font-family: 'Playwrite CU Guides', cursive;
+
+*/
+
+/* Cores do site
+
+#FFC0CB
+#FFD7C0
+#FFC0EF
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+h1 {
+
+}
