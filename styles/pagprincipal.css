@@ -18,6 +18,66 @@ font-family: 'Playwrite CU Guides', cursive;
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
-h1 {
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
+header {
+    background-image: linear-gradient(to right, #FFC0CB, #FFC0EF);
+    width: 100vw;
+}
+
+header > h1 {
+    font-size: 3.5em;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: white;
+    padding: 5px 0px;
+}
+
+section {
+    margin: 10px 0px;
+}
+
+#primeirasec > h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#primeirasec > p {
+    text-indent: 27px;
+    margin: auto;
+    text-align: justify;
+    width: 90vw;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav {
+    padding: 10px;
+    border: 2px solid #FFD7C0;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: #FFD7C0;
+}
+
+#conteudo {
+    margin-top: 100px;
+    text-align: center;
 }
