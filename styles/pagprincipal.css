@@ -10,9 +10,9 @@ font-family: 'Playwrite CU Guides', cursive;
 
 /* Cores do site
 
-#FFC0CB
-#FFD7C0
-#FFC0EF
+    #3646EE
+    #377FED
+    #6337ED
 
 */
 
@@ -24,7 +24,7 @@ font-family: 'Playwrite CU Guides', cursive;
 }
 
 header {
-    background-image: linear-gradient(to right, #FFC0CB, #FFC0EF);
+    background-image: linear-gradient(to right, #3646EE, #377FED);
     width: 100vw;
 }
 
@@ -59,7 +59,7 @@ body {
 
 nav {
     padding: 10px;
-    border: 2px solid #FFD7C0;
+    border: 2px solid #6337ED;
 }
 
 #nav {
@@ -74,7 +74,7 @@ a {
 }
 
 a:hover {
-    background-color: #FFD7C0;
+    background-color: #6337ED;
 }
 
 #conteudo {
