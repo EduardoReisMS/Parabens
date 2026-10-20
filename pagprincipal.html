@@ -7,28 +7,125 @@
     <link rel="stylesheet" href="styles/pagprincipal.css">
 </head>
 <body>
+
     <header>
         <h1>Juju <br>Temp</h1>
     </header>
+
     <nav>
         <div id="nav">
             <p><a href="index.html">Home</a></p>
             <p><a href="presentes.html">Presentes</a></p>
         </div>
     </nav>
+
         <main>
             <section id="primeirasec">
                 <h1>Fã N1 da Hello Kitty e GOCASE</h1>
                 <p>Um presente para uma pessoa incrível!</p>
                 <p>Enquanto houver internet e hospedagem, o seu presente sempre estará aqui.</p>
             </section>
-            <div id="conteudo">
-                <h2>Área disponível para conteúdo</h2>
-                <p>
-                    Caixa de ideias vazia...
-                </p>
+        <section id="galeria">
+            <h1>Galeria de fotos</h1>
+            <div class="carrossel">
+                <div class="slides">
+                    <img src="imagens/Screenshot_20251225-211724.Files do Google.png" alt="Foto 1">
+                    <img src="imagens/brickshellokity.jpeg" alt="Foto 2">
+                    <img src="imagens/garrafa.jpeg" alt="Foto 3">
+                </div>
+
             </div>
+
+            <div class="indicadores">
+                <span class="ativo"></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
         </main>
+
+        <script>
+            const slides = document.querySelector('.slides');
+            const imagens = document.querySelectorAll('.slides img');
+            const indicadores = document.querySelectorAll('.indicadores span');
+
+            let indice = 0;
+
+            let inicioX = 0;
+            let deslocamentoX = 0;
+            let arrastando = false;
+
+            function mostrarSlide() {
+                slides.style.transition = 'transform 0.4s ease';
+                slides.style.transform = `translateX(-${indice * 100}%)`;
+
+                indicadores.forEach((indicador, i) => {
+                    indicador.classList.toggle('ativo', i === indice);
+                });
+            }
+
+            function proximoSlide() {
+                indice++;
+
+                if (indice >= imagens.length) {
+                    indice = 0;
+                }
+
+                mostrarSlide();
+            }
+
+            function slideAnterior() {
+                indice--;
+
+                if (indice < 0) {
+                    indice = imagens.length - 1;
+                }
+
+                mostrarSlide();
+            }
+
+            slides.addEventListener('touchstart', (evento) => {
+                inicioX = evento.touches[0].clientX;
+                deslocamentoX = 0;
+                arrastando = true;
+
+                slides.style.transition = 'none';
+            });
+
+            slides.addEventListener('touchmove', (evento) => {
+                if (!arrastando) return;
+
+                const atualX = evento.touches[0].clientX;
+
+                deslocamentoX = atualX - inicioX;
+
+                const percentual = (deslocamentoX / slides.parentElement.offsetWidth) * 100;
+
+                slides.style.transform =
+                    `translateX(calc(-${indice * 100}% + ${percentual}%))`;
+            });
+
+            slides.addEventListener('touchend', () => {
+                if (!arrastando) return;
+
+                arrastando = false;
+
+                const limite = 50;
+
+                if (Math.abs(deslocamentoX) > limite) {
+
+                    if (deslocamentoX < 0) {
+                        proximoSlide();
+                    } else {
+                        slideAnterior();
+                    }
+
+                } else {
+                    mostrarSlide();
+                }
+            });
+        </script>
 </body>
     <footer>
 
