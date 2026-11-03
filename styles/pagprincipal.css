@@ -25,7 +25,6 @@ font-family: 'Playwrite CU Guides', cursive;
 
 header {
     background-image: linear-gradient(to right, #3646EE, #377FED);
-    width: 100vw;
 }
 
 header > h1 {
@@ -41,6 +40,11 @@ section {
     margin: 10px 0px;
 }
 
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #primeirasec > h1 {
     margin-bottom: 10px;
     font-size: 1.5em;
@@ -51,7 +55,6 @@ section {
     text-indent: 27px;
     margin: auto;
     text-align: justify;
-    width: 90vw;
 }
 
 body {
