@@ -66,6 +66,10 @@ nav {
     border: 2px solid #6337ED;
 }
 
+p {
+    padding: 0px 10px;
+}
+
 #nav {
     display: flex;
     justify-content: space-around;
