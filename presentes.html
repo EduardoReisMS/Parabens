@@ -97,6 +97,34 @@
             margin: 0 auto;
         }
 
+        #container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30vh;
+                gap: 20px;
+            }
+
+        .unidade {
+            font-size: 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .unidade p {
+                margin: 0 0 5px 0;
+                font-size: 16px;
+        }
+
+        .unidade span {
+                font-size: 2em;
+        }
+        
+        #pagprincipal {
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -109,16 +137,75 @@
         </div>
     </nav>
     <main>
-        <section id="presentesentregues">
-            <h1>Presentes entregues</h1>
-            <ul>
-                <li>Almoço;</li>
-                <li>Batom e Gloss;</li>
-                <li>Doces;</li>
-                <li>Passeio no shopping e cineminha;</li>
-                <li>Muita fofoca;</li>
-                <li>Um site. <a href="paginas_antigas/indexold.html">» Link «</a></li>
-            </ul>
+        <h1>Presentes entregues</h1>
+        <ul>
+            <li>Almoço;</li>
+            <li>Batom e Gloss;</li>
+            <li>Doces;</li>
+            <li>Passeio no shopping e cineminha;</li>
+            <li>Muita fofoca;</li>
+            <li>Um site. <a href="paginas_antigas/indexold.html">» Link «</a></li>
+        </ul>
+
+        <h1>01/12/2026</h1>
+
+        <div id="container">
+
+            <div class="unidade">
+                <p>D</p>
+                <span id="dias"></span>
+            </div>
+
+            <div class="unidade">
+                <p>H</p>
+                <span id="horas"></span>
+            </div>
+
+            <div class="unidade">
+                <p>M</p>
+                <span id="minutos"></span>
+            </div>
+
+            <div class="unidade">
+                <p>S</p>
+                <span id="segundos"></span>
+            </div>
+        </div>
+
+        <div>
+            <span id="dias"></span>
+            <span id="horas"></span>
+            <span id="minutos"></span>
+            <span id="segundos"></span>
+        </div>
+
+            <script>
+                const dataDestino = new Date("2026-12-01T00:00:00");
+                function atualizarContagem() {
+                const agora = new Date();
+                const diferenca = dataDestino - agora;
+
+                if (diferenca <= 0) {
+                    document.getElementById("dias").textContent = "0";
+                    document.getElementById("horas").textContent = "0";
+                    document.getElementById("minutos").textContent = "0";
+                    document.getElementById("segundos").textContent = "0";
+                    return;
+                }
+
+                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+                const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+                const segundos = Math.floor((diferenca / 1000) % 60);
+
+                document.getElementById("dias").textContent = dias;
+                document.getElementById("horas").textContent = horas;
+                document.getElementById("minutos").textContent = minutos;
+                document.getElementById("segundos").textContent = segundos;}
+
+                atualizarContagem();
+                setInterval(atualizarContagem, 1000);
+            </script>
             <!-- <h1>Próxima comemoração</h1>
             <h2>Primeira parte entregue</h2>
             <ul>
@@ -127,7 +214,6 @@
             </ul>
             <img src="imagens/Screenshot_6.png" alt="Presentes" id="conversa">
             <p><br>O último presente será entregue no dia 27/12/2026.</p><br>
-        </section>
         <div id="img"><img src="imagens/teste.png"></div> -->
     </main>
 </body>
